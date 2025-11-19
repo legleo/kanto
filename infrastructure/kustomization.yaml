@@ -5,4 +5,5 @@ resources:
   - cert-manager
   - blocky
   - longhorn
+  - lldap
   #- cilium
