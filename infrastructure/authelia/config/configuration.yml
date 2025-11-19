@@ -59,7 +59,7 @@ identity_providers:
     clients:
       - client_id: 'filebrowser'
         client_name: 'FileBrowser Quantum'
-        client_secret: 'UBntmLjC2yYCeHwsyj73Uwo9TAaecAetRwMw0xYcvNL9yRdLSUi0hUAHfvCHFeFh'
+        client_secret: '$pbkdf2-sha512$310000$bakbKlJcCVxN7KFULyZtuA$qBUB9g.qV/lm6KpsZ0NGHsZdC5cggh/iU2w6WTvTIO1WHGsMaNeKaw0nsyPwYx2LZZv4fyClK46KSwhcV4SXNw'
         public: false
         authorization_policy: 'one_factor'
         require_pkce: false
