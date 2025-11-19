@@ -6,7 +6,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: lldap
+    app.kubernetes.io/name: lldap
   ports:
     - name: http
       port: 17170
