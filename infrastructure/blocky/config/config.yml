@@ -1,0 +1,22 @@
+upstreams:
+  groups:
+    default:
+      - 1.1.1.1
+      - 1.0.0.1
+blocking:
+  denylists:
+    ads:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  clientGroupsBlock:
+    default:
+      - ads
+ports:
+  dns: 53
+  http: 80
+customDNS:
+  customTTL: 1h
+  mapping:
+    home.legrandleo.fr: 192.168.1.200
+prometheus:
+  enable: true
+  path: /metrics
