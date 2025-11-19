@@ -29,8 +29,8 @@ spec:
             - name: config
               mountPath: /app/config
           envFrom:
-            - secretRef:
-                name: rwmarkable-env-secret
+            # - secretRef:
+            #     name: rwmarkable-env-secret
             - configMapRef:
                 name: rwmarkable-env
       volumes:
