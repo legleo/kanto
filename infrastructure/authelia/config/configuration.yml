@@ -52,7 +52,7 @@ identity_providers:
           MicuKW/15G46fnWWzMId6NCdJOACIyWtJjPjGy5qlr+8FRRMWUFly+A0Z72RzPoh
           mRhNiiEZ
           -----END CERTIFICATE-----
-        key: {{ secret "config/rsa.key" | mindent 10 "|" | msquote }}
+        key: {{ secret "/app/config/rsa.key" | mindent 10 "|" | msquote }}
     cors:
       endpoints:
         - "userinfo"
