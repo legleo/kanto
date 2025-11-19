@@ -11,7 +11,7 @@ auth:
     oidc:
       enabled: true
       clientId: "filebrowser"
-      issuerUrl: "http://authelia.authelia.svc.cluster.local:9091/application/o/filebrowser/"
+      issuerUrl: "http://authelia.authelia.svc.cluster.local:9091"
       scopes: "email openid profile groups"
       userIdentifier: "preferred_username"
       disableVerifyTLS: false
