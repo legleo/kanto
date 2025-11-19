@@ -5,3 +5,4 @@ resources:
   - vaultwarden
   - paperless-ngx
   #- filebrowser
+  - quantum

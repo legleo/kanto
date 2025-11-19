@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quantum
+  namespace: quantum
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: quantum
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: quantum
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: quantum
+          image: gtstef/filebrowser:latest
+          volumeMounts:
+            - name: srv
+              mountPath: /srv
+      volumes:
+        - name: srv
+          persistentVolumeClaim:
+            claimName: quantum-srv

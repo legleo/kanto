@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: quantum
+  namespace: quantum
+spec:
+  rules:
+    - host: quantum.home.legrandleo.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: quantum
+                port:
+                  number: 80
