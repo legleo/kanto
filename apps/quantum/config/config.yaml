@@ -5,4 +5,4 @@ server:
       config:
         defaultEnabled: true
 auth:
-  adminUsername: admin
+  adminUsername: my_admin
