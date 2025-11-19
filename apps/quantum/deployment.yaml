@@ -19,7 +19,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: quantum
-          image: gtstef/filebrowser:latest
+          image: ghcr.io/gtsteffaniak/filebrowser:0.8.8-beta
           volumeMounts:
             - name: data
               mountPath: /data
