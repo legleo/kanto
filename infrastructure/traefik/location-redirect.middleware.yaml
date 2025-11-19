@@ -12,3 +12,4 @@ spec:
           Header: 'Foo'
           Value: 'Bar'
           Type: 'Set'
+          SetOnResponse: true
