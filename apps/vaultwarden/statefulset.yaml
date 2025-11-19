@@ -24,7 +24,7 @@ spec:
               mountPath: /data
           env:
             - name: DOMAIN
-              value: vaultwarden.home.legrandleo.fr
+              value: https://vaultwarden.home.legrandleo.fr
   volumeClaimTemplates:
     - metadata:
         name: data
