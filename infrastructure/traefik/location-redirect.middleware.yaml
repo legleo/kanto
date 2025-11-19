@@ -8,8 +8,8 @@ spec:
     htransformation:
       Rules:
         - Rule:
-            Name: 'Location rewriteValue'
-            Header: Location
-            Value: '^http://authelia\.authelia\.svc\.cluster\.local(.*)$'
-            ValueReplace: 'https://authelia.home.legrandleo.fr$1'
-            Type: 'RewriteValueRule'
+          Name: 'Location rewriteValue'
+          Header: Location
+          Value: '^http://authelia\.authelia\.svc\.cluster\.local(.*)$'
+          ValueReplace: 'https://authelia.home.legrandleo.fr$1'
+          Type: 'RewriteValueRule'
