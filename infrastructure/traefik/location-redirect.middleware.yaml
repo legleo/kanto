@@ -10,6 +10,6 @@ spec:
         - Rule:
             Name: 'Location rewriteValue'
             Header: Location
-            Value: 'http://(.*)'
-            ValueReplace: 'https://$1'
+            Value: '^http://authelia\.authelia\.svc\.cluster\.local(.*)$'
+            ValueReplace: 'https://authelia.home.legrandleo.fr$1'
             Type: 'RewriteValueRule'
