@@ -26,5 +26,5 @@ providers:
 experimental:
   plugins:
     htransformation:
-      moduleName: "https://github.com/tomMoulard/htransformation"
+      moduleName: "github.com/tomMoulard/htransformation"
       version: "v0.3.3"
