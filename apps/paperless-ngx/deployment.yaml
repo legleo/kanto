@@ -32,11 +32,14 @@ spec:
                 name: paperless-ngx-env
       volumes:
         - name: media
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: paperless-media
         - name: consume
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: paperless-consume
         - name: export
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: paperless-export
         - name: data
           persistentVolumeClaim:
             claimName: paperless-data

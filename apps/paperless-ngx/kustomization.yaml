@@ -3,6 +3,9 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - data.pvc.yaml
+  - consume.pvc.yaml
+  - export.pvc.yaml
+  - media.pvc.yaml
   - deployment.yaml
   - env.configmap.yaml
   - service.yaml
