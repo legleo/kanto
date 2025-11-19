@@ -11,7 +11,7 @@ ports:
         scheme: https
   websecure:
     middlewares:
-      - authelia-authelia@kubernetescrd
+      - authelia@kubernetescrd
 tlsStore:
   default:
     defaultCertificate:
