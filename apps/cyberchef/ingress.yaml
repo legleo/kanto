@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cyberchef
+  namespace: cyberchef
+spec:
+  rules:
+    - host: cyberchef.home.legrandleo.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cyberchef
+                port:
+                  number: 80
