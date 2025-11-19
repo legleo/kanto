@@ -56,3 +56,25 @@ identity_providers:
     cors:
       endpoints:
         - "userinfo"
+    clients:
+      - client_id: 'filebrowser'
+        client_name: 'FileBrowser Quantum'
+        client_secret: '$pbkdf2-sha512$310000$SOQ8.b72e8JAfa7dgLTPQw$fglulPL1S8PbclmwIrBX0n4.Gf6UaBhOMRXLs4jgomineUBMwoa/wqDpCoh/jsN61yB0VOmdv3cFqLF30ocrqw'
+        public: false
+        authorization_policy: 'two_factor'
+        require_pkce: false
+        pkce_challenge_method: ''
+        redirect_uris:
+          - 'https://quantum.home.legrandleo.fr/api/auth/oidc/callback'
+        scopes:
+          - 'openid'
+          - 'profile'
+          - 'groups'
+          - 'email'
+        response_types:
+          - 'code'
+        grant_types:
+          - 'authorization_code'
+        access_token_signed_response_alg: 'none'
+        userinfo_signed_response_alg: 'none'
+        token_endpoint_auth_method: 'client_secret_basic'
