@@ -1,0 +1,15 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: location-redirect
+  namespace: traefik
+spec:
+  plugin:
+    htransformation:
+      Rules:
+        - Rule:
+            Name: 'Location rewriteValue'
+            Header: Location
+            Value: 'http://(.*)'
+            ValueReplace: 'https://$1'
+            Type: 'RewriteValueRule'

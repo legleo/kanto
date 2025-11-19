@@ -5,6 +5,7 @@ resources:
   - repository.yaml
   - release.yaml
   - authelia.middleware.yaml
+  - location-redirect.middleware.yaml
   - certificate.yaml
 
 configMapGenerator:
