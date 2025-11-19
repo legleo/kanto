@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: home-certificate
+  namespace: traefik
+spec:
+  secretName: home-certificate
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: ClusterIssuer
+  dnsNames:
+    - "home.legrandleo.fr"
+    - "*.home.legrandleo.fr"
