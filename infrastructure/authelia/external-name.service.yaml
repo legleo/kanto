@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: authelia-externalName
+  namespace: authelia
+spec:
+  type: externalName
+  externalName: authelia.home.legrandleo.fr
