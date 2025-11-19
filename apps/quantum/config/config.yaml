@@ -12,7 +12,7 @@ auth:
       enabled: true
       clientId: "filebrowser"
       clientSecret: "insecure_secret"
-      issuerUrl: "https://authelia.home.legrandleo.fr"
+      issuerUrl: "http://authelia.authelia.svc.cluster.local:9091"
       scopes: "email openid profile groups"
       userIdentifier: "preferred_username"
       disableVerifyTLS: false
