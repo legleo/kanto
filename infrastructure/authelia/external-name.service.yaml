@@ -4,5 +4,5 @@ metadata:
   name: authelia-externalName
   namespace: authelia
 spec:
-  type: externalName
+  type: ExternalName
   externalName: authelia.home.legrandleo.fr
