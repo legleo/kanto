@@ -25,34 +25,34 @@ session:
   cookies:
     - domain: "home.legrandleo.fr"
       authelia_url: "https://authelia.home.legrandleo.fr"
-identity_providers:
-  oidc:
-    jwks:
-      - key_id: "authelia"
-        algorithm: "RS256"
-        use: "sig"
-        certificate_chain: |
-          -----BEGIN CERTIFICATE-----
-          MIIDMjCCAhqgAwIBAgIRAJ+lhztCKOUKrAwrIvwHvXUwDQYJKoZIhvcNAQELBQAw
-          OTERMA8GA1UEChMIQXV0aGVsaWExJDAiBgNVBAMTG2F1dGhlbGlhLmhvbWUubGVn
-          cmFuZGxlby5mcjAeFw0yNTEwMTMxMzUzNTJaFw0yNjEwMTMxMzUzNTJaMDkxETAP
-          BgNVBAoTCEF1dGhlbGlhMSQwIgYDVQQDExthdXRoZWxpYS5ob21lLmxlZ3JhbmRs
-          ZW8uZnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCui6ztmMxn4pZq
-          j7geCEwwdLvmnZTJo3V4hqPMPalse9PweiewF2d+OH9+sb1UMo2OrTWkmckfvLTb
-          riAyxSkcrrUaRNVFrIQ3nqNP0gnTHZOkaHIeIW0+KY2e3S929R8gQvpndCedBX5k
-          AuFgGG318sR7HmChNzWaxX70LDQojaOlXaGlaMjIt6lGNhG7Kr/zhmEoMfII4VZt
-          wsPf8VmQSwTLbz8uDViPIThHD1LfOFAh54jvbrbEhQAYT+HE//ou84z8D0TE1DVG
-          KJ3pMGG7Wbj6Bb4Q2PwcS1APhFBKr9CYk3qmzzJffZ8ks6JAXTHq9qp+kX08X/Fb
-          KB2Lr4crAgMBAAGjNTAzMA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEF
-          BQcDATAMBgNVHRMBAf8EAjAAMA0GCSqGSIb3DQEBCwUAA4IBAQBR6LECjy8ZN1X2
-          vOeyGrXup203v6V1RxNwAiFnkI9/ScOFpDcrDaDxQzvedw3e3Zm0kKyrPh+TNGh7
-          zUpAvcscRUzfwkSguF/uszpZS3xcO0a5N+CyLTBH+wPkfqOtlGiiUqiL/o4J6sti
-          P2BD5Jl0sxhTxl58/BAQAMUIeWdcTHOicoAzNsu905TW31AtWlQO1l3crOwboNW5
-          YjssCg2OlCdZi8ltaxizbh2YLhOXEjkCTGjLJQKcJSQOfXhH8PvasLOj+CBWk23G
-          MicuKW/15G46fnWWzMId6NCdJOACIyWtJjPjGy5qlr+8FRRMWUFly+A0Z72RzPoh
-          mRhNiiEZ
-          -----END CERTIFICATE-----
-        key: {{ secret "/app/config/rsa.key" | mindent 10 "|" | msquote }}
-    cors:
-      endpoints:
-        - "userinfo"
+# identity_providers:
+#   oidc:
+#     jwks:
+#       - key_id: "authelia"
+#         algorithm: "RS256"
+#         use: "sig"
+#         certificate_chain: |
+#           -----BEGIN CERTIFICATE-----
+#           MIIDMjCCAhqgAwIBAgIRAJ+lhztCKOUKrAwrIvwHvXUwDQYJKoZIhvcNAQELBQAw
+#           OTERMA8GA1UEChMIQXV0aGVsaWExJDAiBgNVBAMTG2F1dGhlbGlhLmhvbWUubGVn
+#           cmFuZGxlby5mcjAeFw0yNTEwMTMxMzUzNTJaFw0yNjEwMTMxMzUzNTJaMDkxETAP
+#           BgNVBAoTCEF1dGhlbGlhMSQwIgYDVQQDExthdXRoZWxpYS5ob21lLmxlZ3JhbmRs
+#           ZW8uZnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCui6ztmMxn4pZq
+#           j7geCEwwdLvmnZTJo3V4hqPMPalse9PweiewF2d+OH9+sb1UMo2OrTWkmckfvLTb
+#           riAyxSkcrrUaRNVFrIQ3nqNP0gnTHZOkaHIeIW0+KY2e3S929R8gQvpndCedBX5k
+#           AuFgGG318sR7HmChNzWaxX70LDQojaOlXaGlaMjIt6lGNhG7Kr/zhmEoMfII4VZt
+#           wsPf8VmQSwTLbz8uDViPIThHD1LfOFAh54jvbrbEhQAYT+HE//ou84z8D0TE1DVG
+#           KJ3pMGG7Wbj6Bb4Q2PwcS1APhFBKr9CYk3qmzzJffZ8ks6JAXTHq9qp+kX08X/Fb
+#           KB2Lr4crAgMBAAGjNTAzMA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEF
+#           BQcDATAMBgNVHRMBAf8EAjAAMA0GCSqGSIb3DQEBCwUAA4IBAQBR6LECjy8ZN1X2
+#           vOeyGrXup203v6V1RxNwAiFnkI9/ScOFpDcrDaDxQzvedw3e3Zm0kKyrPh+TNGh7
+#           zUpAvcscRUzfwkSguF/uszpZS3xcO0a5N+CyLTBH+wPkfqOtlGiiUqiL/o4J6sti
+#           P2BD5Jl0sxhTxl58/BAQAMUIeWdcTHOicoAzNsu905TW31AtWlQO1l3crOwboNW5
+#           YjssCg2OlCdZi8ltaxizbh2YLhOXEjkCTGjLJQKcJSQOfXhH8PvasLOj+CBWk23G
+#           MicuKW/15G46fnWWzMId6NCdJOACIyWtJjPjGy5qlr+8FRRMWUFly+A0Z72RzPoh
+#           mRhNiiEZ
+#           -----END CERTIFICATE-----
+#         key: {{ secret "/app/config/rsa.key" | mindent 10 "|" | msquote }}
+#     cors:
+#       endpoints:
+#         - "userinfo"
