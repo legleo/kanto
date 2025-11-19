@@ -3,6 +3,10 @@ access_control:
   rules:
     - domain: "authelia.home.legrandleo.fr"
       policy: "bypass"
+    - domain: "vaultwarden.home.legrandleo.fr"
+      policy: "bypass"
+      # ressources:
+      #   - "^/api*"
 authentication_backend:
   ldap:
     address: "ldap://lldap.lldap.svc.cluster.local"
