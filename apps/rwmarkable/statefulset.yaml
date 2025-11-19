@@ -14,6 +14,10 @@ spec:
       labels:
         app.kubernetes.io/name: rwmarkable
     spec:
+      securityContext:
+        runAsUser: 1001
+        runAsGroup: 1001
+        fsGroup: 1001
       containers:
         - name: rwmarkable
           image: ghcr.io/fccview/rwmarkable:latest
