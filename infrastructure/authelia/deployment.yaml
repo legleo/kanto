@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authelia
+  namespace: authelia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: authelia
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: authelia
+    spec:
+      enableServiceLinks: false
+      containers:
+        - name: authelia
+          image: authelia/authelia:latest
+          volumeMounts:
+            - name: config
+              mountPath: /config
+            - name: config-values
+              mountPath: /config/configuration.yml
+              subPath: configuration.yml
+          envFrom:
+            - secretRef:
+                name: authelia-env-secret
+      volumes:
+        - name: config
+          emptyDir:
+            medium: Memory
+            sizeLimit: 128Mi
+        - name: config-values
+          configMap:
+            name: authelia-config

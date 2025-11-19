@@ -1,0 +1,23 @@
+access_control:
+  default_policy: "one_factor"
+  rules:
+    - domain: "authelia.home.legrandleo.fr"
+      policy: "bypass"
+authentication_backend:
+  ldap:
+    address: "ldap://lldap.lldap.svc.cluster.local"
+    implementation: lldap
+    user: "uid=authelia,OU=people,DC=home,DC=legrandleo,DC=fr"
+    base_dn: "DC=home,DC=legrandleo,DC=fr"
+notifier:
+  filesystem:
+    filename: "/config/notification.txt"
+storage:
+  postgres:
+    address: "tcp://postgres:5432"
+    database: authelia
+    username: postgres
+session:
+  cookies:
+    - domain: "home.legrandleo.fr"
+      authelia_url: "https://authelia.home.legrandleo.fr"
