@@ -19,7 +19,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: forgejo
-          image: codeberg.org/forgejo/forgejo:12
+          image: codeberg.org/forgejo/forgejo:12-rootless
           volumeMounts:
             - name: data
               mountPath: /data
