@@ -31,4 +31,4 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: vaultwarden-data
+            claimName: vaultwarden-encrypted-data
