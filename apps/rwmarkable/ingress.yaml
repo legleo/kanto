@@ -14,4 +14,4 @@ spec:
               service:
                 name: rwmarkable
                 port:
-                  number: 3000
+                  name: http
