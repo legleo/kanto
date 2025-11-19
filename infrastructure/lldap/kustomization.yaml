@@ -6,3 +6,4 @@ resources:
   - env.configmap.yaml
   - ingress.yaml
   - service.yaml
+  - data.pvc.yaml
