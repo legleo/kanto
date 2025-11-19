@@ -9,7 +9,6 @@ spec:
       Rules:
         - Rule:
           Name: 'Location rewriteValue'
-          Header: server
-          Value: '(.*)'
-          ValueReplace: 'Maybe$1'
-          Type: 'RewriteValueRule'
+          Header: 'Foo'
+          Value: 'Bar'
+          Type: 'Foo'
