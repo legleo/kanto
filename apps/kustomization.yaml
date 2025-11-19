@@ -4,3 +4,4 @@ resources:
   - rwmarkable
   - vaultwarden
   - paperless-ngx
+  - filebrowser
