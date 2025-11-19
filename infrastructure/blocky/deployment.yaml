@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: blocky
-          image: spx01/blocky:latest
+          image: ghcr.io/0xerr0r/blocky:v0.27.0
           ports:
             - containerPort: 80
               protocol: TCP
