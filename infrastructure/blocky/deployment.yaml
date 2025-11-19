@@ -7,11 +7,10 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: blocky
+      app.kubernetes.io/name: blocky
   template:
     metadata:
       labels:
-        app: blocky
         app.kubernetes.io/name: blocky
     spec:
       containers:

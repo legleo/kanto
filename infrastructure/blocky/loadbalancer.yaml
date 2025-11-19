@@ -6,7 +6,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: blocky
+    app.kubernetes.io/name: blocky
   externalIPs:
     - 192.168.1.200
   ports:
