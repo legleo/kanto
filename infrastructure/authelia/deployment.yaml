@@ -23,7 +23,7 @@ spec:
             - name: config-values
               mountPath: /config/configuration.yml
               subPath: configuration.yml
-            - name: files
+            - name: config-files
               mountPath: /config/rsa.key
               subPath: rsa.key
           envFrom:
@@ -39,6 +39,6 @@ spec:
         - name: config-values
           configMap:
             name: authelia-config
-        - name: files
+        - name: config-files
           secret:
             secretName: authelia-files-secret
