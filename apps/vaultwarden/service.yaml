@@ -9,4 +9,4 @@ spec:
     app.kubernetes.io/name: vaultwarden
   ports:
     - port: 8000
-      targetPort: 8000
+      targetPort: 80
