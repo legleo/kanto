@@ -3,9 +3,9 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - data.pvc.yaml
-  #- deployment.yaml
+  - deployment.yaml
   - env.configmap.yaml
-  #- service.yaml
-  #- ingress.yaml
+  - service.yaml
+  - ingress.yaml
   - redis
   - postgres
