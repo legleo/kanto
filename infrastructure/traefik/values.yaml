@@ -1,0 +1,24 @@
+ingressRoute:
+  dashboard:
+    enabled: true
+    entryPoints: [web, websecure]
+    matchRule: Host(`traefik.home.legrandleo.fr`)
+ports:
+  web:
+    redirections:
+      entryPoint:
+        to: websecure
+        scheme: https
+  websecure:
+    middlewares:
+      - authelia-authelia@kubernetescrd
+tlsStore:
+  default:
+    defaultCertificate:
+      secretName: home-certificate
+service:
+  externalIPs:
+    - 192.168.1.47
+providers:
+  kubernetesCRD:
+    allowCrossNamespace: true
