@@ -8,8 +8,8 @@ spec:
     htransformation:
       Rules:
         - Rule:
-            Name: 'Location rewriteValue'
-            Header: server
-            Value: '(.*)'
-            ValueReplace: 'Maybe$1'
-            Type: 'RewriteValueRule'
+          Name: 'Location rewriteValue'
+          Header: server
+          Value: '(.*)'
+          ValueReplace: 'Maybe$1'
+          Type: 'RewriteValueRule'
