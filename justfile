@@ -19,3 +19,7 @@ alias d := decrypt
 [no-cd]
 decrypt *ARGS:
     @sops --decrypt {{ARGS}}
+
+[no-cd]
+gen-key:
+    @tr -dc A-Za-z0-9 </dev/urandom | head -c 32; echo -n
