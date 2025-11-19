@@ -5,4 +5,18 @@ server:
       config:
         defaultEnabled: true
 auth:
-  adminUsername: admin
+  methods:
+    password:
+      enabled: false
+    oidc:
+      enabled: true
+      clientId: "filebrowser"
+      clientSecret: "insecure_secret"
+      issuerUrl: "https://authelia.home.legrandleo.fr"
+      scopes: "email openid profile groups"
+      userIdentifier: "preferred_username"
+      disableVerifyTLS: false
+      logoutRedirectUrl: ""
+      createUser: true
+      adminGroup: "admin"
+      groupsClaim: "groups"
