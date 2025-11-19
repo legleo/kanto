@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: changedetection
+  namespace: changedetection
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: changedetection
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: changedetection
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: changedetection
+          image: ghcr.io/dgtlmoon/changedetection.io:0.50.24
+          volumeMounts:
+            - name: data
+              mountPath: /datastore
+          envFrom:
+            - configMapRef:
+                name: changedetection-env
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: data

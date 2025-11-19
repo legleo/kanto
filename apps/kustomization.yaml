@@ -7,3 +7,4 @@ resources:
   - quantum
   - cyberchef
   - forgejo
+  - changedetection
