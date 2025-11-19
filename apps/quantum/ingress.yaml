@@ -14,4 +14,4 @@ spec:
               service:
                 name: quantum
                 port:
-                  number: 80
+                  name: http
