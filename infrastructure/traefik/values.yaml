@@ -11,7 +11,7 @@ ports:
         scheme: https
   websecure:
     middlewares:
-      - authelia-traefik@kubernetescrd
+      - traefik-authelia@kubernetescrd
 tlsStore:
   default:
     defaultCertificate:
