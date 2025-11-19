@@ -30,7 +30,7 @@ spec:
             - secretRef:
                 name: quantum-env-secret
             - configMapRef:
-                name: quantum-ngx-env
+                name: quantum-env
       volumes:
         - name: data
           persistentVolumeClaim:
