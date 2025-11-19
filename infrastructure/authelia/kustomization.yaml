@@ -7,7 +7,6 @@ resources:
   - ingress.yaml
   - middleware.yaml
   - env.configmap.yaml
-  - external-name.service.yaml
   - postgres
 
 configMapGenerator:

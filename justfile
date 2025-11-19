@@ -23,3 +23,7 @@ decrypt *ARGS:
 [no-cd]
 gen-key:
     @tr -dc A-Za-z0-9 </dev/urandom | head -c 64; echo -n
+
+[no-cd]
+dns-test NAME *ARGS:
+    @kubectl run dns-test --rm -it --image=busybox:1.36 --restart=Never {{ARGS}} -- nslookup {{NAME}}
