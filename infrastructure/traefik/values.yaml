@@ -9,6 +9,9 @@ ports:
       entryPoint:
         to: websecure
         scheme: https
+  websecure:
+    middlewares:
+      - authelia-authelia@kubernetescrd
 tlsStore:
   default:
     defaultCertificate:
