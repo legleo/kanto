@@ -28,9 +28,11 @@ spec:
               mountPath: /app/data
             - name: config
               mountPath: /app/config
-          env:
-            - name: NODE_ENV
-              value: production
+          envFrom:
+            - secretRef:
+                name: rwmarkable-env-secret
+            - configMapRef:
+                name: rwmarkable-env
       volumes:
         - name: config
           configMap:

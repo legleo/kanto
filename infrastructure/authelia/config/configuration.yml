@@ -78,3 +78,24 @@ identity_providers:
         access_token_signed_response_alg: 'none'
         userinfo_signed_response_alg: 'none'
         token_endpoint_auth_method: 'client_secret_basic'
+      - client_id: 'rwmarkable'
+        client_name: 'rwMarkable'
+        client_secret: '$pbkdf2-sha512$310000$1SaEdVpsOxRCyrku8cLWrw$.Jq.0tx5wNVdNzAdHvWPt6YD3jIhhogLCb5M6l/4AFWoH17W/T8V0zZFQEvpctIUv/mGx8x/5kESsplwFvdZyg'
+        public: true
+        authorization_policy: 'one_factor'
+        require_pkce: false
+        pkce_challenge_method: ''
+        redirect_uris:
+          - 'https://rwmarkable.home.legrandleo.fr/api/oidc/callback'
+        scopes:
+          - 'openid'
+          - 'profile'
+          - 'groups'
+          - 'email'
+        response_types:
+          - 'code'
+        grant_types:
+          - 'authorization_code'
+        access_token_signed_response_alg: 'none'
+        userinfo_signed_response_alg: 'none'
+        token_endpoint_auth_method: 'client_secret_basic'
