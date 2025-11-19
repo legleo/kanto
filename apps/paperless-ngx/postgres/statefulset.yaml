@@ -29,12 +29,12 @@ spec:
           env:
             - name: POSTGRES_USER
               valueFrom:
-                secretKeyRef:
+                configMapKeyRef:
                   name: paperless-ngx-env
                   key: PAPERLESS_DBUSER
             - name: POSTGRES_DB
               valueFrom:
-                secretKeyRef:
+                configMapKeyRef:
                   name: paperless-ngx-env
                   key: PAPERLESS_DBNAME
             - name: POSTGRES_PASSWORD
