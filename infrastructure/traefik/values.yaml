@@ -27,4 +27,3 @@ experimental:
   plugins:
     htransformation:
       moduleName: "https://github.com/tomMoulard/htransformation"
-      version: "v0.4.1"
