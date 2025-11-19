@@ -16,7 +16,7 @@ spec:
       enableServiceLinks: false
       containers:
         - name: authelia
-          image: authelia/authelia:latest
+          image: ghcr.io/authelia/authelia:4.39
           volumeMounts:
             - name: config
               mountPath: /config
