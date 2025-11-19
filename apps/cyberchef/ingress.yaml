@@ -14,4 +14,4 @@ spec:
               service:
                 name: cyberchef
                 port:
-                  number: 80
+                  name: http
