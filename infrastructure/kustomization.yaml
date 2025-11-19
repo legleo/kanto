@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - traefik
   - cert-manager
-  - blocky
+  #- blocky
   - longhorn
   - lldap
   - authelia
