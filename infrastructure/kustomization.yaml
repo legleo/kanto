@@ -7,5 +7,5 @@ resources:
   - longhorn
   - lldap
   - authelia
-  - wg-easy
+  #- wg-easy
   #- cilium
