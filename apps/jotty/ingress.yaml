@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: rwmarkable
-  namespace: rwmarkable
+  name: jotty
+  namespace: jotty
 spec:
   rules:
-    - host: rwmarkable.home.legrandleo.fr
+    - host: jotty.home.legrandleo.fr
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: rwmarkable
+                name: jotty
                 port:
                   name: http
