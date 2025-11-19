@@ -9,6 +9,10 @@ ports:
       entryPoint:
         to: websecure
         scheme: https
+tlsStore:
+  default:
+    defaultCertificate:
+      secretName: home-certificate
 service:
   externalIPs:
     - 192.168.1.200
