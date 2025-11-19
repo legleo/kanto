@@ -20,7 +20,7 @@ spec:
         fsGroup: 1001
       containers:
         - name: rwmarkable
-          image: ghcr.io/fccview/rwmarkable:latest
+          image: ghcr.io/fccview/rwmarkable:1.6.1
           ports:
             - containerPort: 3000
           volumeMounts:
