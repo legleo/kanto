@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: wg-easy
-          image: ghcr.io/wg-easy/wg-easy:15.0
+          image: ghcr.io/wg-easy/wg-easy:15.1
           ports:
             - containerPort: 51820
               name: wg
@@ -23,6 +23,8 @@ spec:
             - containerPort: 51821
               name: http
               protocol: TCP
+          securityContext:
+            privileged: true
           volumeMounts:
             - mountPath: /etc/wireguard
               name: data
