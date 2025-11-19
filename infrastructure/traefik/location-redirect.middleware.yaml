@@ -11,4 +11,4 @@ spec:
           Name: 'Location rewriteValue'
           Header: 'Foo'
           Value: 'Bar'
-          Type: 'Foo'
+          Type: 'Set'
