@@ -5,3 +5,5 @@ metadata:
 spec:
   externalIPs: true
   loadBalancerIPs: true
+  interfaces:
+    - enp2s0
