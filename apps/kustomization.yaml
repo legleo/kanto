@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - rwmarkable
   - vaultwarden
-  #- paperless-ngx
+  - paperless-ngx
