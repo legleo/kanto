@@ -21,9 +21,20 @@ spec:
         - name: quantum
           image: gtstef/filebrowser:latest
           volumeMounts:
-            - name: srv
-              mountPath: /srv
+            - name: data
+              mountPath: /data
+            - name: config-values
+              mountPath: /config.yaml
+              subPath: config.yaml
+          envFrom:
+            - secretRef:
+                name: quantum-env-secret
+            - configMapRef:
+                name: quantum-ngx-env
       volumes:
-        - name: srv
+        - name: data
           persistentVolumeClaim:
-            claimName: quantum-srv
+            claimName: quantum-data
+        - name: config-values
+          configMap:
+            name: quantum-config

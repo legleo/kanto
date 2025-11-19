@@ -5,4 +5,12 @@ resources:
   - deployment.yaml
   - ingress.yaml
   - service.yaml
-  - srv.pvc.yaml
+  - data.pvc.yaml
+
+configMapGenerator:
+  - name: quantum-config
+    namespace: quantum
+    files:
+      - config/config.yaml
+    options:
+      disableNameSuffixHash: true

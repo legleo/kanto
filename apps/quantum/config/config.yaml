@@ -1,0 +1,8 @@
+server:
+  sources:
+    - path: /data
+      name: data
+      config:
+        defaultEnabled: true
+auth:
+  adminUsername: admin
