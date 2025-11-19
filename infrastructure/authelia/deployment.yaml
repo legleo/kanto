@@ -28,9 +28,9 @@ spec:
               subPath: rsa.key
           envFrom:
             - secretRef:
-              name: authelia-env-secret
+               name: authelia-env-secret
             - configMapRef:
-              name: authelia-env
+               name: authelia-env
       volumes:
         - name: config
           emptyDir:
