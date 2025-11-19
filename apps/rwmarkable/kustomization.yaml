@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - namespace.yaml
+  - statefulset.yaml
+  - service.yaml
+  - ingress.yaml
+
+configMapGenerator:
+  - name: rwmarkable-config
+    namespace: rwmarkable
+    files:
+      - config/emojis.json
+      - config/themes.json
+    options:
+      disableNameSuffixHash: true

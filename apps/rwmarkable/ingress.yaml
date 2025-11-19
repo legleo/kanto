@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rwmarkable
+  namespace: rwmarkable
+spec:
+  rules:
+    - host: rwmarkable.home.legrandleo.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: rwmarkable
+                port:
+                  number: 3000
