@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  namespace: forgejo
+spec:
+  serviceName: postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: postgres
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: postgres
+        app.kubernetes.io/component: database
+        app.kubernetes.io/part-of: forgejo
+    spec:
+      containers:
+        - name: postgres
+          image: docker.io/library/postgres@sha256:feff5b24fedd610975a1f5e743c51a4b360437f4dc3a11acf740dcd708f413f6
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: shmem
+              mountPath: /dev/shm
+            - name: data
+              mountPath: /var/lib/postgresql/data
+          env:
+            - name: PGDATA
+              value: /var/lib/postgresql/data/db
+            - name: POSTGRES_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: forgejo-env
+                  key: FORGEJO__database__USER
+            - name: POSTGRES_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: forgejo-env
+                  key: FORGEJO__database__NAME
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: forgejo-env-secret
+                  key: FORGEJO__database__PASSWD
+      volumes:
+        - name: shmem
+          emptyDir:
+            medium: Memory
+            sizeLimit: 128Mi
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: longhorn
+        resources:
+          requests:
+            storage: 1Gi
