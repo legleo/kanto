@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wg-easy-wg
+  namespace: wg-easy
+spec:
+  type: LoadBalancer
+  ports:
+    - name: wg
+      port: 51820
+      targetPort: 51820
+      protocol: UDP
+  selector:
+    app.kubernetes.io/name: wg-easy
+  externalIPs:
+    - 192.168.1.200
