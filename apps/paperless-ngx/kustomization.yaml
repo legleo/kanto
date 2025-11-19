@@ -11,4 +11,4 @@ resources:
   - service.yaml
   - ingress.yaml
   - redis
-  #- postgres
+  - postgres
