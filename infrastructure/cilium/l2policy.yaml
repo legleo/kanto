@@ -7,3 +7,7 @@ spec:
   loadBalancerIPs: true
   interfaces:
     - enp2s0
+  nodeSelector:
+    matchExpressions:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
