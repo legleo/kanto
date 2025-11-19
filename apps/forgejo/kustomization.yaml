@@ -5,6 +5,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+  - loadbalancer.yaml
   - env.configmap.yaml
   - data.pvc.yaml
   - postgres
