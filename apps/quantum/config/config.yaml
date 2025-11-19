@@ -12,6 +12,7 @@ auth:
     oidc:
       enabled: true
       clientId: "filebrowser"
+      clientSecret: "UBntmLjC2yYCeHwsyj73Uwo9TAaecAetRwMw0xYcvNL9yRdLSUi0hUAHfvCHFeFh"
       issuerUrl: "http://authelia.authelia.svc.cluster.local"
       scopes: "email openid profile groups"
       userIdentifier: "preferred_username"
