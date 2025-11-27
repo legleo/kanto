@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grist
+  namespace: grist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: grist
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: grist
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: grist
+          image: docker.io/gristlabs/grist
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: data
+              mountPath: /persist
+          envFrom:
+            - configMapRef:
+                name: grist-env
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: grist-data
