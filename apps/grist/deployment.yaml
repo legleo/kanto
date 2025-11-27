@@ -28,6 +28,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: grist-env
+            - secretRef:
+                 name: grist-env-secret
       volumes:
         - name: data
           persistentVolumeClaim:
