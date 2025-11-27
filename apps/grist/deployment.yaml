@@ -19,7 +19,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: grist
-          image: docker.io/gristlabs/grist
+          image: docker.io/gristlabs/grist:1.7.8
           ports:
             - containerPort: 80
           volumeMounts:
