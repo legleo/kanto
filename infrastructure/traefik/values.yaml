@@ -12,7 +12,6 @@ ports:
   websecure:
     middlewares:
       - traefik-authelia@kubernetescrd
-      - traefik-location-redirect@kubernetescrd
 tlsStore:
   default:
     defaultCertificate:
